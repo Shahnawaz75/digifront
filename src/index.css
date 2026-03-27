@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Digicut Branding Colors - Improved Contrast */
+    --background: 210 20% 98%;
+    /* Light gray background instead of pure white */
+    --foreground: 222 47% 11%;
+    /* Dark blue-gray for text */
+
+    --card: 0 0% 100%;
+    /* White cards stand out against background */
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary: Deep Blue - Professional & Trustworthy */
+    --primary: 217 91% 40%;
+    /* Deep blue #1e40af */
+    --primary-foreground: 0 0% 100%;
+    /* White text on blue */
+
+    /* Secondary: Light blue-gray for subtle elements */
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent: Vibrant Orange - Energy & Precision */
+    --accent: 24 95% 53%;
+    /* Vibrant orange #f97316 */
+    --accent-foreground: 0 0% 100%;
+    /* White text on orange */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 88%;
+    /* Visible borders */
+    --input: 214 32% 95%;
+    /* Light input backgrounds */
+    --ring: 217 91% 40%;
+    /* Blue focus rings */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  button {
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+
+  /* Improved button and selection states */
+  .btn-selected {
+    @apply bg-accent text-accent-foreground border-accent;
+  }
+
+  .btn-hover-accent:hover {
+    @apply bg-accent/10 border-accent text-accent;
+  }
+
+  /* Better focus states */
+  .focus-visible-accent:focus-visible {
+    @apply ring-2 ring-accent ring-offset-2;
+  }
+
+  /* Card hover effects */
+  .card-hover:hover {
+    @apply shadow-md transition-shadow duration-200;
+  }
+
+  /* Selected item highlighting */
+  .item-selected {
+    @apply bg-accent/10 border-accent border-2;
+  }
+}
